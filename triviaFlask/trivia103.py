@@ -40,7 +40,8 @@ def start():
 
 @app.route("/login", methods = ["POST"])
 def login():
-        if request.form.get("nm") and request.form.get("nm") == "Python":
+    if request.method == "POST":
+        if request.form.get("nm") == "Python":
                 return redirect("/correct")
         else:
             return redirect("/")
